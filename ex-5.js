@@ -82,3 +82,25 @@ let orders = [
 ];
 
 // Start coding here
+let mostExpensive = [
+  orders[0].productPrice,
+  orders[0].id,
+  orders[0].productQuantity,
+];
+for (let value of orders) {
+  if (
+    mostExpensive[0] * mostExpensive[2] <
+    value.productPrice * value.productQuantity
+  ) {
+    mostExpensive[0] = value.productPrice;
+    mostExpensive[1] = value.id;
+    mostExpensive[2] = value.productQuantity;
+  }
+}
+console.log(
+  `The most expensive order is order id ${mostExpensive[1]} (${(
+    mostExpensive[0] * mostExpensive[2]
+  )
+    .toFixed(2)
+    .replace(/\d(?=(\d{3})+\.)/g, "$&,")} Baht) `
+);

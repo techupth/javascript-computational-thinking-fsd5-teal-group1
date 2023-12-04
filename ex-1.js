@@ -82,3 +82,13 @@ let orders = [
 ];
 
 // Start coding here
+let totalValue = 0;
+for (let value of orders) {
+  totalValue += value.productPrice * value.productQuantity;
+  //console.log(totalValue);
+}
+console.log(
+  `Total amount of the orders: ${totalValue
+    .toFixed(2)
+    .replace(/\d(?=(\d{3})+\.)/g, "$&,")} Bath`
+);
