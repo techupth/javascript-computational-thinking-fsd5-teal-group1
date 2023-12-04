@@ -82,3 +82,14 @@ let orders = [
 ];
 
 // Start coding here
+let birdiePaidAmount = 0;
+for (let value of orders) {
+  if (value.customerName === "Birdie Shepland") {
+    birdiePaidAmount += value.productPrice * value.productQuantity;
+  }
+}
+console.log(
+  `Total paid amount of Birdie Shepland: ${birdiePaidAmount
+    .toFixed(2)
+    .replace(/\d(?=(\d{3})+\.)/g, "$&,")} Baht`
+);
