@@ -82,3 +82,14 @@ let orders = [
 ];
 
 // Start coding here
+let paidByJcb = 0;
+for (let value of orders) {
+  if (value.creditCardType === "jcb") {
+    paidByJcb += value.productPrice * value.productQuantity;
+  }
+}
+console.log(
+  `Paid by JCB credit card amount: (${paidByJcb
+    .toFixed(2)
+    .replace(/\d(?=(\d{3})+\.)/g, "$&,")} Bath) `
+);
