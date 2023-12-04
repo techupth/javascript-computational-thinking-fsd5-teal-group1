@@ -82,3 +82,16 @@ let orders = [
 ];
 
 // Start coding here
+let hightPrice = {};
+for (let i = 0; i < orders.length; i++) {
+  // console.log(orders[i].productName);
+  if (i === 0) {
+    hightPrice = orders[i];
+  } else if (
+    hightPrice.productPrice / hightPrice.productQuantity <
+    orders[i].productPrice / orders[i].productQuantity
+  ) {
+    hightPrice=orders[i]
+  }
+}
+console.log(`The most expensive product in orders: ${hightPrice.productName}`);

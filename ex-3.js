@@ -82,3 +82,10 @@ let orders = [
 ];
 
 // Start coding here
+let totalAmount=0
+for (let i of orders){
+  if(i.customerName==="Birdie Shepland"){
+    totalAmount=totalAmount+i.productPrice*i.productQuantity
+  }
+}
+console.log(`Total paid amount of Birdie Shepland: ${totalAmount.toLocaleString()} Baht`);
